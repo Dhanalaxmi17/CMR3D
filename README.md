@@ -20,8 +20,7 @@ the large-scale ScanNetV2 benchmark reveals the benefits of our
 proposed method, leading to an absolute improvement of 2.0% over
 the baseline. In addition to 3D object detection, we investigate the
 effectiveness of our CMR3D framework for the problem of 3D object
-counting. Our source code will be publicly released
-
+counting. 
 
 ![CMR3D](utils/CMR3D.JPG)
 
