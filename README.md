@@ -31,7 +31,7 @@ It is advised to create a new conda environment for this project. The installati
 $ conda create --name=cmr3d python=3.7
 $ conda activate cmr3d
 $ conda install tensorflow=1.14
-$ git clone 
+$ git clone https://github.com/Dhanalaxmi17/CMR3D.git
 ```
 2. As this model uses PointNet++ Backbone similar to that of VoteNet, similar packages of votenet are required to install. The following dependencies need to be installed with ```pip install```
 
