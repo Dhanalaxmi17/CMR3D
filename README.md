@@ -80,7 +80,7 @@ python train.py --data_path path/to/scannet_train_detection_data --dataset scann
  python show_results_scannet.py gt
  ```
  
- For predictions, bounding boxes on the Grouth truth Scenes 
+ For predictions, bounding boxes on the Grouth Truth Scenes : To view these bounding boxes, donot forget to add --dump_results attributes while testing.
  ```
  python show_results_scannet.py pred
  ```
