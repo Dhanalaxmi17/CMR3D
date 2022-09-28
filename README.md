@@ -51,7 +51,7 @@ open3d (for visualizing the outputs)
 3. Compile the CUDA layers for PointNet++, which we used in the backbone network:
 
 ```
-cd cmr3d/pointnet2
+cd CMR3D/pointnet2
 python setup.py install
 ```
 
@@ -71,4 +71,14 @@ python train.py --data_path path/to/scannet_train_detection_data --dataset scann
  ```
  python eval.py --data_path path/to/scannet_train_detection_data --dataset scannet --model cmr3d --checkpoint_path path/to/checkpoint --dump_dir cmr3d_eval --num_point 40000 --cluster_sampling seed_fps --use_3d_nms --use_cls_nms --per_class_proposal --dump_results
  ```
+ 
+ 
+ 
+ ## Acknowledgements
+ 1. ScanNetV2 : https://github.com/facebookresearch/votenet/tree/main/scannet
+ 2. VoteNet : https://github.com/facebookresearch/votenet
+ 3. MLCVNet : https://github.com/NUAAXQ/MLCVNet
+ 4. H3DNet : https://github.com/zaiweizhang/H3DNet
+ 
+ 
  
