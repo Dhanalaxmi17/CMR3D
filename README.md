@@ -31,6 +31,7 @@ It is advised to create a new conda environment for this project. The installati
 $ conda create --name=cmr3d python=3.7
 $ conda activate cmr3d
 $ conda install tensorflow=1.14
+$ git clone 
 ```
 2. As this model uses PointNet++ Backbone similar to that of VoteNet, similar packages of votenet are required to install. The following dependencies need to be installed with ```pip install```
 
@@ -42,7 +43,6 @@ sklearn
 opencv-python
 plyfile
 pytorch=1.1.0
-tensorflow-gpu==1.12.0 (only for visualization)
 'trimesh>=2.35.39,<2.35.40'
 'networkx>=2.2,<2.3'
 open3d (for visualizing the outputs)
@@ -51,7 +51,7 @@ open3d (for visualizing the outputs)
 3. Compile the CUDA layers for PointNet++, which we used in the backbone network:
 
 ```
-cd pointnet2
+cd cmr3d/pointnet2
 python setup.py install
 ```
 
