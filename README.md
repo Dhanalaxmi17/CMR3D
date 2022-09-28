@@ -69,9 +69,21 @@ python train.py --data_path path/to/scannet_train_detection_data --dataset scann
  Testing the model with checkpoint
  
  ```
- python eval.py --data_path path/to/scannet_train_detection_data --dataset scannet --model cmr3d --checkpoint_path path/to/checkpoint --dump_dir cmr3d_eval --num_point 40000 --cluster_sampling seed_fps --use_3d_nms --use_cls_nms --per_class_proposal --dump_results
+ python eval.py --data_path path/to/scannet_train_detection_data --dataset scannet --model cmr3d --checkpoint_path path/to/checkpoint --dump_dir cmr3d_eval --num_point 40000 --cluster_sampling seed_fps --use_3d_nms --use_cls_nms --per_class_proposal --batch_size 6 --dump_results
+ ```
+ ## Visualize predictions and ground truths
+ 
+ To view the visualizations of ground truth or predictions, the [show_results_scannet.py](utils/show_results_scannet.py) can be used.
+ 
+ For Ground Truth
+ ```
+ python show_results_scannet.py gt
  ```
  
+ For predictions, bounding boxes on the Grouth truth Scenes 
+ ```
+ python show_results_scannet.py pred
+ ```
  
  
  ## Acknowledgements
