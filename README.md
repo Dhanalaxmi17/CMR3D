@@ -28,8 +28,9 @@ counting.
 It is advised to create a new conda environment for this project. The installation steps are as follows:
 1. Create new conda environment and activate it.
 ```bash
-$ conda create --name=cmr3d python=3.8
+$ conda create --name=cmr3d python=3.7
 $ conda activate cmr3d
+$ conda install tensorflow=1.14
 ```
 2. As this model uses PointNet++ Backbone similar to that of VoteNet, similar packages of votenet are required to install. The following dependencies need to be installed with ```pip install```
 
@@ -44,7 +45,7 @@ pytorch=1.1.0
 tensorflow-gpu==1.12.0 (only for visualization)
 'trimesh>=2.35.39,<2.35.40'
 'networkx>=2.2,<2.3'
-open3d
+open3d (for visualizing the outputs)
 ```
 
 3. Compile the CUDA layers for PointNet++, which we used in the backbone network:
@@ -53,4 +54,21 @@ open3d
 cd pointnet2
 python setup.py install
 ```
-4. 
+
+## Data Preparation
+
+For data preparation, we share the same data pre-processing steps with VoteNet. We provide the processed training and testing data for  ScanNet [here](https://github.com/facebookresearch/votenet/blob/main/scannet/README.md).
+
+
+ Training 
+
+```
+python train.py --data_path path/to/scannet_train_detection_data --dataset scannet --log_dir log_scannet --num_point 40000 --model cmr3d --batch_size 6
+```
+
+ Testing the model with checkpoint
+ 
+ ```
+ python eval.py --data_path path/to/scannet_train_detection_data --dataset scannet --model cmr3d --checkpoint_path path/to/checkpoint --dump_dir cmr3d_eval --num_point 40000 --cluster_sampling seed_fps --use_3d_nms --use_cls_nms --per_class_proposal --dump_results
+ ```
+ 
